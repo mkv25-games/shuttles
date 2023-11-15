@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "test": "ts-standard",
     "lint": "ts-standard --fix",
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
