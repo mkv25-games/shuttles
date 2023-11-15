@@ -27,7 +27,7 @@ export default {
     const camera = new PIXI.Container()
 
     const container = new PIXI.Container()
-    const texture = PIXI.Texture.from('/assets/shuttle.png')
+    const texture = PIXI.Texture.from('./assets/shuttle.png')
 
     const shuttle = new PIXI.Sprite(texture)
     shuttle.anchor.set(0.5)
