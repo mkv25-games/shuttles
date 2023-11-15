@@ -2,6 +2,9 @@
 
 This is a demo project combining Vue + Vite, and Pixi.js using a TypeScript setup.
 
+Preview:
+- https://mkv25-games.github.io/shuttles/
+
 ![Shuttles](./shuttles-screenshot.png)
 
 ## Local Development
