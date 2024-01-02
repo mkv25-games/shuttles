@@ -5,9 +5,9 @@ export default class Game {
   app: PIXI.Application
   camera: PIXI.Container
 
-  constructor($canvas:HTMLElement) {
+  constructor ($canvas: HTMLElement) {
     this.$canvas = $canvas
-    
+
     const app = new PIXI.Application({
       width: 512,
       height: 512,
@@ -23,12 +23,11 @@ export default class Game {
     this.setup(app, camera)
   }
 
-  private setup(app: PIXI.Application, camera: PIXI.Container) {
+  private setup (app: PIXI.Application, camera: PIXI.Container): void {
     const $canvas = this.$canvas
     const appView = app.view as any
     $canvas.appendChild(appView)
     app.renderer.resize($canvas.clientWidth, $canvas.clientHeight)
-
 
     const container = new PIXI.Container()
     const texture = PIXI.Texture.from('./assets/shuttle.png')
@@ -46,7 +45,7 @@ export default class Game {
     app.stage.addChild(camera)
 
     app.ticker.add(() => {
-      camera.rotation -= 0.01;
+      camera.rotation -= 0.01
     })
 
     window.onresize = () => {
@@ -57,18 +56,18 @@ export default class Game {
     this.camera = camera
   }
 
-  resizeCanvas() {
+  resizeCanvas (): void {
     const { app, camera } = this
-    const $canvas = this.$canvas as HTMLElement
+    const $canvas = this.$canvas
     app?.renderer.resize($canvas.clientWidth, $canvas.clientHeight)
 
-    if (camera && app) {
+    if (camera !== undefined && app !== undefined) {
       camera.x = (app.screen.width) / 2
       camera.y = (app.screen.height) / 2
     }
   }
 
-  destroy() {
-    this.app.destroy()
+  destroy (): void {
+    return this.app.destroy()
   }
 }
